@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do | Miguel Ballesteros </title>
+    <link rel="stylesheet" href="/Taller Desarrollo - Miguel Ballesteros/css/tasks.css" />
+    <link rel="icon" type="image/x-icon" href="/Taller Desarrollo - Miguel Ballesteros/media/logo.png">
+</head>
+    <body>
+        <!--https://neumorphism.io/#e0e0e0        Para los efectos de sombra-->
+        <header>
+            <div class="logo">
+                <a href="/Taller Desarrollo - Miguel Ballesteros/html/tasks.html"><img id="imgLogo" src="/Taller Desarrollo - Miguel Ballesteros/media/Diseño_sin_título__3_-removebg-preview.png" alt=""></a>
+                
+                <h1 id="Header_Title"><span id="Header_Title-Username"></span></h1>
+            </div>
+
+            <div class="userPart">
+                <div class="svgChat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><circle cx="9.5" cy="9.5" r="1.5"></circle><circle cx="14.5" cy="9.5" r="1.5"></circle><path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.515 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.671 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"></path></svg>
+                </div>
+
+                <div class="svgProfile">
+                    <a href="/Taller Desarrollo - Miguel Ballesteros/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: msFilter"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg></a>
+                </div>
+
+                <a href="/Taller Desarrollo - Miguel Ballesteros/html/account.html">
+                    <div class="user">
+                        <p id="myName"></p>
+                        
+                        <div id="imgUserP">
+                            <img src="https://jobsaca.com.cy/wp-content/uploads/2015/05/icon-user-default.png">
+                        </div>
+                        <script>
+                            function mostrarImagenesGuardadas2() {
+                              const contenedorImagenes = document.getElementById('imgUserP');
+                              const imagenesGuardadas = JSON.parse(localStorage.getItem('imagenes')) || [];
+
+                              contenedorImagenes.innerHTML = '';
+
+                              if (imagenesGuardadas.length > 0) {
+                                  const imagen = document.createElement('img');
+                                  imagen.src = imagenesGuardadas[imagenesGuardadas.length - 1];
+                                  contenedorImagenes.appendChild(imagen);
+                              } else {
+                                  const imagenDefecto = document.createElement('img');
+                                  imagenDefecto.src = 'https://jobsaca.com.cy/wp-content/uploads/2015/05/icon-user-default.png'; 
+                                  imagenDefecto.alt = 'Enlace por defecto';
+                                  contenedorImagenes.appendChild(imagenDefecto);
+                              }
+                            }
+
+                            mostrarImagenesGuardadas2();
+                        </script>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="DTareas">
+                <img id="imgHouse" src="/Taller Desarrollo - Miguel Ballesteros/media/hogar.svg" alt="">
+                <h1>Tareas</h1>
+            </div>
+
+            <form id="tasksForm">
+                <div class="task-input-container">
+                    <div class="task-with-date">
+                        <img id="imgSvg" src="/Taller Desarrollo - Miguel Ballesteros/media/mas.svg" alt="">
+                        <input type="text" id="name" placeholder="Agrega una tarea" required />
+                        <div class="date-picker-container">                    
+                            <i class="fa fa-calendar"></i>
+                            <input type="date" id="date" required />
+                        </div>
+                    </div>
+            
+                    <div class="description-with-button">
+                        <input type="text" id="description" class="description-input" placeholder="Descripción de la tarea" required />
+                        <button type="submit">Agregar tarea</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="DPendientes">
+                <img id="imgTask" src="/Taller Desarrollo - Miguel Ballesteros/media/lista.svg" alt="">
+                <h2>Lista de tareas pendientes</h2>
+            </div>     
+
+            <table id="tasksTable">
+                <tbody>
+                    <!-- Las filas nuevas aca -->
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <img src="/Taller Desarrollo - Miguel Ballesteros/media/Diseño_sin_título__3_-removebg-preview.png">
+            <p>Miguel Angel Ballesteros - Ing. Softare 4to Semestre</p>
+
+            <ul >
+                <li><a href="/Taller Desarrollo - Miguel Ballesteros/html/tasks.html" >Inicio</a></li>
+                <li><a href="/Taller Desarrollo - Miguel Ballesteros/html/account.html" >Tu cuenta</a></li>
+                <li><a href="/Taller Desarrollo - Miguel Ballesteros/index.html" >Registrate</a></li>
+            </ul>
+            <p>&copy; 2024 To Do CIAF - Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="/Taller Desarrollo - Miguel Ballesteros/js/tasks.js"></script>
+        <script src="/Taller Desarrollo - Miguel Ballesteros/js/userInfo.js"></script>
+        <script src="/Taller Desarrollo - Miguel Ballesteros/js/greetingUser.js"></script>
+    </body>
+</html>

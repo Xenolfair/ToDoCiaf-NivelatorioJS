@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Empleados</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registro de Empleados</h1>
+
+    <form id="employeeForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" required />
+
+      <label for="position">Cargo:</label>
+      <input type="text" id="position" required />
+
+      <label for="department">Departamento:</label>
+      <input type="text" id="department" required />
+
+      <button type="submit">Agregar Empleado</button>
+    </form>
+
+    <h2>Lista de Empleados</h2>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cargo</th>
+          <th>Departamento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los empleados se agregarán aquí -->
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>

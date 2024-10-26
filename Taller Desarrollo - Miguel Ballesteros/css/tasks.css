@@ -382,3 +382,8 @@ footer a {
     text-decoration: none;
     color: #ffffff;
 }
+
+ /* Cursor title */
+.txt-type > .txt {
+  border-right: 0.2rem solid #777;
+}
